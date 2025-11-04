@@ -94,7 +94,7 @@ class OutdatedVaccineError(VaccineError):
         """
         return (
             datetime.date.today()
-            > visitor.get("vaccine").get(
+            > visitor.get("vaccine", {}).get(
                 "expiration_date",
                 datetime.date.min
             )
